@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=4 uid="uid://jmfyv6pxmbxp"]
+
+[ext_resource type="TileSet" uid="uid://wo1bngoyfdvo" path="res://scenes/office_tiles.tres" id="1_1shue"]
+[ext_resource type="Texture2D" uid="uid://g5qaqps43bg0" path="res://Modern Interiors -Characters _ free edition/Alex_idle_anim_16x16.png" id="2_1shue"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y1sl"]
+atlas = ExtResource("2_1shue")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55qfs"]
+atlas = ExtResource("2_1shue")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8hbr"]
+atlas = ExtResource("2_1shue")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eak0"]
+atlas = ExtResource("2_1shue")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2hd6"]
+atlas = ExtResource("2_1shue")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxv8b"]
+atlas = ExtResource("2_1shue")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irys8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y1sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55qfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8hbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eak0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2hd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxv8b")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kuwk2"]
+radius = 4.0
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAABAAAAAAABAAMAAAACAAAAAAABAAMAAAADAAAAAAABAAMAAAAEAAAAAAABAAMAAAAFAAAAAAABAAMAAAAGAAAAAAABAAMAAAAHAAAAAAABAAMAAAAIAAAAAAABAAMAAAAJAAAAAAABAAMAAAAKAAAAAAABAAMAAAALAAAAAAABAAMAAAAMAAAAAAABAAMAAAAAAP//AAABAAIAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAKAP//AAABAAIAAAALAP//AAABAAIAAAAMAP//AAABAAIAAAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAHAP7/AAABAAEAAAAIAP7/AAABAAEAAAAJAP7/AAABAAEAAAAKAP7/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAAAAP3/AAABAAEAAAABAP3/AAABAAEAAAACAP3/AAABAAEAAAADAP3/AAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAHAP3/AAABAAEAAAAIAP3/AAABAAEAAAAJAP3/AAABAAEAAAAKAP3/AAABAAEAAAALAP3/AAABAAEAAAAMAP3/AAABAAEAAAAAAPz/AAABAAEAAAABAPz/AAABAAEAAAACAPz/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAAKAPz/AAABAAEAAAALAPz/AAABAAEAAAAMAPz/AAABAAEAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAACAPv/AAABAAEAAAADAPv/AAABAAEAAAAEAPv/AAABAAEAAAAFAPv/AAABAAEAAAAGAPv/AAABAAEAAAAHAPv/AAABAAEAAAAIAPv/AAABAAEAAAAJAPv/AAABAAEAAAAKAPv/AAABAAEAAAALAPv/AAABAAEAAAAMAPv/AAABAAEAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAKAPr/AAABAAAAAAALAPr/AAABAAAAAAAMAPr/AAABAAAAAAA=")
+tile_set = ExtResource("1_1shue")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAALAP7/AQAAAAUAAAAMAP7/AQABAAUAAAALAP3/AQAAAAQAAAALAPz/AQAAAAMAAAAMAPz/AQABAAMAAAAMAP3/AQABAAQAAAA=")
+tile_set = ExtResource("1_1shue")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAPr/AAABAAUAAAABAPr/AAACAAUAAAACAPr/AAACAAUAAAADAPr/AAADAAUAAAAMAPr/AAADAAUAAAALAPr/AAACAAUAAAAKAPr/AAACAAUAAAAJAPr/AAABAAUAAAAHAP//AQAKAAIAAAAGAP//AQAJAAIAAAACAP7/AQAMAAAAAAAJAP//AQAHAAYAAAAJAP7/AQAHAAUAAAAKAP//AQADAAYAAAALAP//AQAEAAYAAAAMAP//AQAEAAYAAAAKAP7/AQABAAYAAAALAP7/AQALAAAAAAA=")
+tile_set = ExtResource("1_1shue")
+
+[node name="Character_A" type="CharacterBody2D" parent="."]
+position = Vector2(138, 0)
+disable_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character_A"]
+position = Vector2(-70, -35)
+scale = Vector2(2.3125, 2.25)
+sprite_frames = SubResource("SpriteFrames_irys8")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.430568
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character_A"]
+position = Vector2(-71, -4)
+shape = SubResource("CircleShape2D_kuwk2")
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(104, -32)
+zoom = Vector2(4, 4)
