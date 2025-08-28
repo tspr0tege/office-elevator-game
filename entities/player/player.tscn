@@ -1,12 +1,51 @@
-[gd_scene load_steps=14 format=3 uid="uid://06shfvuvp2po"]
+[gd_scene load_steps=25 format=3 uid="uid://06shfvuvp2po"]
 
 [ext_resource type="Script" uid="uid://bfsrswn2h46gr" path="res://entities/player/entities_player.gd" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://c1c6utmj70kwc" path="res://Character sprites/Male_B/walk.png" id="2_abrql"]
+[ext_resource type="Texture2D" uid="uid://cjejsp5cva03a" path="res://Character sprites/Male_B/idle.png" id="2_bls4j"]
+[ext_resource type="Texture2D" uid="uid://8sspukl0hrfc" path="res://Character sprites/Male_B/run.png" id="3_fkugw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nva4x"]
-size = Vector2(15, 15)
+size = Vector2(15, 36.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_symyc"]
+size = Vector2(20, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
+atlas = ExtResource("2_bls4j")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1qjk"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ovn"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afbqv"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx6sm"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqrof"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlsy"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2kln"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
+atlas = ExtResource("3_fkugw")
+region = Rect2(448, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sglur"]
 atlas = ExtResource("2_abrql")
@@ -44,6 +83,43 @@ region = Rect2(512, 192, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7thud")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1qjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ovn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afbqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx6sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqrof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wlsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2kln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we0b7")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sglur")
 }, {
 "duration": 1.0,
@@ -68,26 +144,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_wvtmh")
 }],
 "loop": true,
-"name": &"default",
-"speed": 7.0
+"name": &"walk",
+"speed": 8.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_symyc")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.75)
 shape = SubResource("RectangleShape2D_nva4x")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="OnObject" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OnObject"]
+position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_symyc")
 debug_color = Color(0, 1, 0, 0.419608)
 
@@ -95,5 +167,6 @@ debug_color = Color(0, 1, 0, 0.419608)
 position = Vector2(3.57628e-07, -15)
 scale = Vector2(0.78125, 0.78125)
 sprite_frames = SubResource("SpriteFrames_7thud")
-autoplay = "default"
-frame_progress = 0.463578
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.52122
