@@ -1,17 +1,20 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://wo1bngoyfdvo"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://wo1bngoyfdvo"]
 
-[ext_resource type="Texture2D" uid="uid://cwqr4ys5rs1vt" path="res://Rixitic - 2D Sidescroller Office Tileset/tileset_architecture.png" id="1_anm7e"]
-[ext_resource type="Texture2D" uid="uid://d2g6prhars3re" path="res://Rixitic - 2D Sidescroller Office Tileset/tileset_objects.png" id="2_lwoqt"]
-[ext_resource type="PackedScene" uid="uid://bc25p400xk425" path="res://entities/elevator/elevator.tscn" id="3_lwoqt"]
+[ext_resource type="Texture2D" uid="uid://cwqr4ys5rs1vt" path="res://Rixitic - 2D Sidescroller Office Tileset/tileset_architecture.png" id="1_ur2ai"]
+[ext_resource type="Texture2D" uid="uid://d2g6prhars3re" path="res://Rixitic - 2D Sidescroller Office Tileset/tileset_objects.png" id="2_ntnxl"]
+[ext_resource type="PackedScene" uid="uid://bc25p400xk425" path="res://entities/elevator/elevator.tscn" id="3_ac5aj"]
+[ext_resource type="PackedScene" uid="uid://1cussuj8bbft" path="res://entities/stairwell/stairwell.tscn" id="4_m742j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffrks"]
 resource_name = "Architecture"
-texture = ExtResource("1_anm7e")
+texture = ExtResource("1_ur2ai")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -20,7 +23,9 @@ texture = ExtResource("1_anm7e")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 5:1/0 = 0
 6:1/0 = 0
 7:1/0 = 0
@@ -29,7 +34,9 @@ texture = ExtResource("1_anm7e")
 1:2/0 = 0
 2:2/0 = 0
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 5:2/0 = 0
 6:2/0 = 0
 7:2/0 = 0
@@ -78,7 +85,7 @@ texture = ExtResource("1_anm7e")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syi5d"]
 resource_name = "Objects"
-texture = ExtResource("2_lwoqt")
+texture = ExtResource("2_ntnxl")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -179,7 +186,8 @@ texture = ExtResource("2_lwoqt")
 13:6/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ffrks"]
-scenes/1/scene = ExtResource("3_lwoqt")
+scenes/1/scene = ExtResource("3_ac5aj")
+scenes/2/scene = ExtResource("4_m742j")
 
 [resource]
 physics_layer_0/collision_layer = 1

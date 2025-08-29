@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://jmfyv6pxmbxp"]
 
-[ext_resource type="TileSet" uid="uid://wo1bngoyfdvo" path="res://scenes/office_tiles.tres" id="1_1shue"]
+[ext_resource type="TileSet" uid="uid://wo1bngoyfdvo" path="res://scenes/office1/office_tiles.tres" id="1_1shue"]
 [ext_resource type="Texture2D" uid="uid://g5qaqps43bg0" path="res://Modern Interiors -Characters _ free edition/Alex_idle_anim_16x16.png" id="2_1shue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2y1sl"]
