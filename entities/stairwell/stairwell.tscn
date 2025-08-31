@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://gpthnvpyr2wf" path="res://entities/stairwell/StairwellDoor.png" id="1_d8nxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ug7m"]
-size = Vector2(32, 48)
+size = Vector2(14, 48)
 
 [node name="Stairwell" type="Node2D" groups=["Stairwells"]]
 

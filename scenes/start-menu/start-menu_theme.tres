@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cmewcscix164a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgguy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gmhfg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmbiy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fopbf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cjk0"]
+
+[resource]
+Button/colors/font_focus_color = Color(0, 0.690196, 1, 1)
+Button/font_sizes/font_size = 25
+Button/styles/disabled = SubResource("StyleBoxEmpty_bgguy")
+Button/styles/focus = SubResource("StyleBoxEmpty_gmhfg")
+Button/styles/hover = SubResource("StyleBoxEmpty_xmbiy")
+Button/styles/normal = SubResource("StyleBoxEmpty_fopbf")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5cjk0")

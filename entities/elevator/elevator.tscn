@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c2c0"]
-size = Vector2(30, 47)
+size = Vector2(16, 47)
 
 [node name="Elevator" type="Node2D" groups=["Elevators"]]
 script = ExtResource("1_rtcbl")

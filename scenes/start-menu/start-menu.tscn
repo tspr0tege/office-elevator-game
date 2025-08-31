@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://fycolimbhea7"]
+
+[ext_resource type="Script" uid="uid://cje7e2trm526" path="res://scenes/start-menu/scenes_start-menu.gd" id="1_3xs3o"]
+[ext_resource type="Texture2D" uid="uid://baprkvfpfbhtm" path="res://scenes/start-menu/cooltext489868463634477.png" id="2_s8lah"]
+[ext_resource type="Theme" uid="uid://cmewcscix164a" path="res://scenes/start-menu/start-menu_theme.tres" id="3_54w20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw3xj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0uye"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3xs3o")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw3xj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p0uye")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_s8lah")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Main" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StartGame" type="Button" parent="HBoxContainer/CenterContainer/Main"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Difficulty")
+theme = ExtResource("3_54w20")
+text = "Start Game"
+alignment = 0
+
+[node name="Difficulty" type="Button" parent="HBoxContainer/CenterContainer/Main"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../StartGame")
+theme = ExtResource("3_54w20")
+text = "Difficulty"
+alignment = 0
+
+[node name="SelectDifficulty" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Easy" type="Button" parent="HBoxContainer/CenterContainer/SelectDifficulty"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Medium")
+theme = ExtResource("3_54w20")
+text = "Easy"
+alignment = 0
+
+[node name="Medium" type="Button" parent="HBoxContainer/CenterContainer/SelectDifficulty"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Easy")
+focus_neighbor_bottom = NodePath("../Hard")
+theme = ExtResource("3_54w20")
+text = "Medium"
+alignment = 0
+
+[node name="Hard" type="Button" parent="HBoxContainer/CenterContainer/SelectDifficulty"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Medium")
+theme = ExtResource("3_54w20")
+text = "Hard"
+alignment = 0
+
+[connection signal="button_up" from="HBoxContainer/CenterContainer/Main/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="button_up" from="HBoxContainer/CenterContainer/Main/Difficulty" to="." method="_on_difficulty_button_up"]
+[connection signal="button_up" from="HBoxContainer/CenterContainer/SelectDifficulty/Easy" to="." method="_handle_select_difficulty" binds= [0]]
+[connection signal="button_up" from="HBoxContainer/CenterContainer/SelectDifficulty/Medium" to="." method="_handle_select_difficulty" binds= [1]]
+[connection signal="button_up" from="HBoxContainer/CenterContainer/SelectDifficulty/Hard" to="." method="_handle_select_difficulty" binds= [2]]

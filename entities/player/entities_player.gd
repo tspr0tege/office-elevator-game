@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal finished_traversing
+
 const WALK_SPEED := 100.0
 const RUN_SPEED := 200.0
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -16,10 +18,12 @@ func _physics_process(delta: float) -> void:
 	if TRAVERSING_TO != Vector2.ZERO:
 		var gap = TRAVERSING_TO.y - position.y
 		var move_by = (TRAVERSING_SPEED * delta) * (gap / abs(gap))
-		if abs(gap) < abs(move_by): 
+		if abs(gap) < abs(move_by): #finished traversing
 			position.y = TRAVERSING_TO.y
 			TRAVERSING_TO = Vector2.ZERO
 			visible = true
+			finished_traversing.emit()
+			#if $Stairwell_sfx.playing: $Stairwell_sfx.stop()
 		else:
 			position.y += move_by
 		return
@@ -62,6 +66,7 @@ func _physics_process(delta: float) -> void:
 					visible = false
 					TRAVERSING_TO = valid_stairwells[0].position
 					TRAVERSING_SPEED = 20
+					#$Stairwell_sfx.play(0.0)
 					#position.y = valid_stairwells[0].position.y
 				break
 	
@@ -80,6 +85,7 @@ func _physics_process(delta: float) -> void:
 					visible = false
 					TRAVERSING_TO = valid_stairwells[0].position
 					TRAVERSING_SPEED = 20
+					#$Stairwell_sfx.play(0.0)
 					#position.y = valid_stairwells[0].position.y
 				break
 	

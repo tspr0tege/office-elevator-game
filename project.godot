@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Office Elevator Game"
-run/main_scene="uid://jmfyv6pxmbxp"
+run/main_scene="uid://fycolimbhea7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SceneManager="*res://autoload/AL_SceneManager.gd"
+Data="*res://autoload/AL_Data.gd"
 
 [global_group]
 
